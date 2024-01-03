@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { tipCardsData, limitationCardsData } from '../data/constants';
+import TipCard from '../components/TipCard.astro';
+import LimitationCard from '../components/LimitationCard.astro';
+import BMIForm from '../components/BMIForm';
+import { Image } from 'astro:assets';
+
+import logo from '../assets/images/logo.svg';
+import gitHub from '../assets/images/icon-github.svg';
+import personImage from '../assets/images/image-man-eating.webp';
+import decorationLeft from '../assets/images/pattern-curved-line-left.svg';
+import decorationRight from '../assets/images/pattern-curved-line-right.svg';
+---
+
+<BaseLayout title='Frontend Mentor | Body Mass Index Calculator'>
+	<div class='flex flex-col lg:gap-20 gap-6'>
+		<div
+			class='bg-gradient-to-br from-transparent-light-blue to-light-blue w-full lg:w-[978px] lg:h-[737px] flex flex-shrink-0 h-[40rem] rounded-b-4xl absolute top-0 -z-10 lg:mx-6'>
+		</div>
+		<section>
+			<div
+				class='grid items-center lg:grid-cols-2 lg:mx-36 gap-2 lg:gap-0 lg:pb-20'>
+				<div class='flex lg:justify-start justify-center'>
+					<Image
+						class:list={'lg:size-16 size-8'}
+						src={logo}
+						alt='Logo of Body Mass Index Calculator.'
+						format='avif'
+						loading='lazy'
+					/>
+				</div>
+				<div class='flex justify-center lg:justify-end mb-8 lg:mb-0'>
+					<a
+						class='flex items-center bg-light-blue rounded-full w-24 gap-3 px-1.5 py-1 text-[0.8125rem] font-semibold leading-6 text-gunmetal transition hover:bg-light-blue/50'
+						href='repo'>
+						<Image
+							src={gitHub}
+							alt='Logo of Body Mass Index Calculator.'
+							format='avif'
+							loading='lazy'
+						/>Repo</a
+					>
+				</div>
+			</div>
+		</section>
+	</div>
+	<section>
+		<div class='grid lg:grid-cols-2 gap-8 lg:mx-36 mx-6'>
+			<div
+				class='flex flex-col justify-start lg:gap-8 gap-6 lg:mt-16 text-center lg:text-start'>
+				<h1 class='lg:text-heading-xl text-gunmetal text-heading-l'>
+					Body Mass{' '}<br class='block' />Index{' '}<br
+						class='md:hidden block'
+					/> Calculator
+				</h1>
+				<p
+					class='text-body-m text-dark-electric-blue lg:w-[29.0625rem] mb-12'>
+					Better understand your weight in relation to your height
+					using our body mass index (BM) calculator. While BMI is not
+					the sole determinant of a healthy weight, it offers a
+					valuable starting point to evaluate your overall health and
+					well-being.
+				</p>
+			</div>
+			<BMIForm client:load />
+		</div>
+	</section>
+
+	<section>
+		<div class='grid lg:mt-40 md:grid-cols-2 gap-8 relative mx-6'>
+			<div class='hidden lg:block lg:absolute lg:right-16 lg:-top-24'>
+				<Image
+					src={decorationLeft}
+					alt=''
+					format='avif'
+					loading='lazy'
+				/>
+			</div>
+			<div class=''>
+				<Image
+					src={personImage}
+					alt='image of a person eating sushi.'
+					format='avif'
+					loading='lazy'
+					width={468}
+					height={533}
+				/>
+			</div>
+			<div class='flex flex-col gap-8 justify-center md:mt-20'>
+				<h2 class='text-heading-l text-gunmetal'>
+					What your BMI result means
+				</h2>
+				<p class='text-body-m text-dark-electric-blue'>
+					A BMI range of 18.5 to 24.9 is considered a 'healthy
+					weight.' Maintaining a healthy weight may lower your chances
+					of experiencing health issues later on, such as obesity and
+					type 2 diabetes. Aim for a nutritious diet with reduced fat
+					and sugar content, incorporating ample fruits and
+					vegetables. Additionally, strive for regular physical
+					activity, ideally about 30 minutes daily for five days a
+					week.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div
+			class='bg-gradient-to-b from-transparent-light-blue to-light-blue/10 rounded-4xl mx-6'>
+			<div class='grid lg:grid-cols-3 gap-10 my-14 lg:mx-20 p-8'>
+				{tipCardsData.map((card) => <TipCard tipCard={card} />)}
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div
+			class='grid lg:grid-cols-12 md:grid-cols-4 gap-6 m-6 lg:mx-36 grid-flow-row'>
+			<div class='lg:col-span-6 md:col-span-4 gap-8'>
+				<h2
+					class='text-gunmetal text-heading-ml lg:text-heading-lcol-span-1 mb-8'>
+					Limitations of BMI
+				</h2>
+				<p class='text-body-m text-dark-electric-blue md:mb-8'>
+					Although BMI is often a practical indicator of healthy
+					weight, it is not suited for every person. Specific groups
+					should carefully consider their BMI outcomes, and in certain
+					cases, the measurement may not be beneficial to use.
+				</p>
+			</div>
+
+			<div
+				class='lg:col-start-7 lg:row-start-1 lg:col-span-4 md:row-start-2 md:col-span-2'>
+				{
+					limitationCardsData
+						.slice(0, 1)
+						.map((card) => <LimitationCard limitationCard={card} />)
+				}
+			</div>
+			<div
+				class='hidden lg:block lg:col-strt-2 lg:col-span-2 lg:row-start-2 lg:pl-12'>
+				<Image
+					src={decorationRight}
+					alt=''
+					format='avif'
+					loading='lazy'
+				/>
+			</div>
+
+			<div
+				class='lg:col-start-4 lg:row-start-2 lg:col-span-4 md:col-span-2'>
+				{
+					limitationCardsData
+						.slice(1, 2)
+						.map((card) => <LimitationCard limitationCard={card} />)
+				}
+			</div>
+
+			<div
+				class='lg:col-start-8 lg:row-start-2 lg:col-span-4 md:col-span-2'>
+				{
+					limitationCardsData
+						.slice(2, 3)
+						.map((card) => <LimitationCard limitationCard={card} />)
+				}
+			</div>
+			<div
+				class='lg:col-start-3 lg:row-start-3 lg:col-span-4 md:col-span-2'>
+				{
+					limitationCardsData
+						.slice(3, 4)
+						.map((card) => <LimitationCard limitationCard={card} />)
+				}
+			</div>
+
+			<div
+				class='lg:col-start-7 lg:row-start-3 lg:col-span-4 md:col-span-2 md:col-start-2'>
+				{
+					limitationCardsData
+						.slice(4, 5)
+						.map((card) => <LimitationCard limitationCard={card} />)
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class='section footer'>
+		<div class='text-center'>
+			Challenge by <a
+				class='text-blue'
+				href='https://www.frontendmentor.io?ref=challenge'
+				target='_blank'
+				rel='noopener'
+				>Frontend Mentor</a
+			>. Coded by <a
+				class='text-blue'
+				href='https://www.frontendmentor.io/profile/samilaug'
+				target='_blank'
+				rel='noopener'
+				>Samila Gunarathna</a
+			>.
+		</div>
+	</section>
+</BaseLayout>

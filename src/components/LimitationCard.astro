@@ -1,0 +1,19 @@
+---
+import type { limitationCard } from '../utils/types';
+const { image, title, description }: limitationCard =
+	Astro.props.limitationCard;
+---
+
+<div class='p-6 rounded-2xl bg-white shadow-xl-blue grid gap-4 h-full'>
+	<div class='flex gap-4'>
+		<img
+			class='size-8'
+			src={image}
+			alt=''
+		/>
+		<h3 class='text-gunmetal text-heading-s'>{title}</h3>
+	</div>
+	<div class='text-dark-electric-blue text-body-m'>
+		<p>{description}</p>
+	</div>
+</div>

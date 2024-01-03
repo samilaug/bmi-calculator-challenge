@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Inter';
+    src: url(/fonts/Inter-VariableFont.ttf) format(truetype);
+    font-weight: 400 600;
+    font-display: swap;
+    font-style: normal;
+}
+
+@layer base {
+
+    /* Custom radio button styles */
+    [type='radio'] {
+        @apply appearance-none hover:subpixel-antialiased hover:border-blue checked:border-0 hover:border-2 border-borders checked:text-blue/15 focus:ring-1 focus:ring-offset-0 focus:ring-blue;
+    }
+
+    [type='radio']:checked {
+        /* Custom style for checked state */
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23345FF6' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='4'/%3E%3C/svg%3E");
+    }
+
+    /* Hide the increment and decrement buttons on input of type number */
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+}
