@@ -25,11 +25,9 @@ Users should be able to:
 
 ### Screenshot
 
-<!-- markdownlint-disable MD033 -->
-<img src="public/screenshots/mobile-design.png" alt="screenshot of mobile design" height="700">
-<img src="public/screenshots/tab-design.png" alt="screenshots of tablet design" height="700">
-<img src="public/screenshots/desktop-design.png" alt="screenshots of desktop design" height="700">
-<!-- markdownlint-enable MD033 -->
+![screenshot of mobile design](public/screenshots/mobile-design.png)
+![screenshots of tablet design](public/screenshots/tab-design.png)
+![screenshots of desktop design](public/screenshots/desktop-design.png)
 
 ### Links
 
