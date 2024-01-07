@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+
+import logo from '../assets/images/logo.svg';
+import gitHub from '../assets/images/icon-github.svg';
+---
+
+<header>
+	<div
+		class='grid items-center lg:grid-cols-2 lg:mx-36 gap-2 lg:gap-0 lg:pb-20'>
+		<div class='flex lg:justify-start justify-center'>
+			<Image
+				class:list={'lg:size-16 size-8'}
+				src={logo}
+				alt='Logo of Body Mass Index Calculator.'
+				format='avif'
+				loading='lazy'
+			/>
+		</div>
+		<div class='flex justify-center lg:justify-end mb-8 lg:mb-0'>
+			<a
+				class='flex items-center bg-light-blue rounded-full w-24 gap-3 px-1.5 py-1 text-[0.8125rem] font-semibold leading-6 text-gunmetal transition hover:bg-light-blue/50'
+				href='https://github.com/samilaug/bmi-calculator-challenge.git'>
+				<Image
+					src={gitHub}
+					alt='Logo of Body Mass Index Calculator.'
+					format='avif'
+					loading='lazy'
+				/>Repo</a
+			>
+		</div>
+	</div>
+</header>

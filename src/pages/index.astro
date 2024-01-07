@@ -11,6 +11,8 @@ import gitHub from '../assets/images/icon-github.svg';
 import personImage from '../assets/images/image-man-eating.webp';
 import decorationLeft from '../assets/images/pattern-curved-line-left.svg';
 import decorationRight from '../assets/images/pattern-curved-line-right.svg';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 ---
 
 <BaseLayout title='Frontend Mentor | Body Mass Index Calculator'>
@@ -18,32 +20,7 @@ import decorationRight from '../assets/images/pattern-curved-line-right.svg';
 		<div
 			class='bg-gradient-to-br from-transparent-light-blue to-light-blue w-full lg:w-[978px] lg:h-[737px] flex flex-shrink-0 h-[40rem] rounded-b-4xl absolute top-0 -z-10 lg:mx-6'>
 		</div>
-		<section>
-			<div
-				class='grid items-center lg:grid-cols-2 lg:mx-36 gap-2 lg:gap-0 lg:pb-20'>
-				<div class='flex lg:justify-start justify-center'>
-					<Image
-						class:list={'lg:size-16 size-8'}
-						src={logo}
-						alt='Logo of Body Mass Index Calculator.'
-						format='avif'
-						loading='lazy'
-					/>
-				</div>
-				<div class='flex justify-center lg:justify-end mb-8 lg:mb-0'>
-					<a
-						class='flex items-center bg-light-blue rounded-full w-24 gap-3 px-1.5 py-1 text-[0.8125rem] font-semibold leading-6 text-gunmetal transition hover:bg-light-blue/50'
-						href='https://github.com/samilaug/bmi-calculator-challenge.git'>
-						<Image
-							src={gitHub}
-							alt='Logo of Body Mass Index Calculator.'
-							format='avif'
-							loading='lazy'
-						/>Repo</a
-					>
-				</div>
-			</div>
-		</section>
+		<Header />
 	</div>
 	<section>
 		<div class='grid lg:grid-cols-2 gap-8 lg:mx-36 mx-6'>
@@ -68,16 +45,8 @@ import decorationRight from '../assets/images/pattern-curved-line-right.svg';
 	</section>
 
 	<section>
-		<div class='grid lg:mt-40 md:grid-cols-2 gap-8 relative mx-6'>
-			<div class='hidden lg:block lg:absolute lg:right-16 lg:-top-24'>
-				<Image
-					src={decorationLeft}
-					alt=''
-					format='avif'
-					loading='lazy'
-				/>
-			</div>
-			<div class=''>
+		<div class='grid lg:mt-40 md:grid-cols-2 gap-8 mx-6'>
+			<div class='relative flex justify-center items-end'>
 				<Image
 					src={personImage}
 					alt='image of a person eating sushi.'
@@ -86,6 +55,15 @@ import decorationRight from '../assets/images/pattern-curved-line-right.svg';
 					width={468}
 					height={533}
 				/>
+				<div
+					class='hidden lg:block lg:absolute lg:-right-[70%] lg:-top-16'>
+					<Image
+						src={decorationLeft}
+						alt=''
+						format='avif'
+						loading='lazy'
+					/>
+				</div>
 			</div>
 			<div class='flex flex-col gap-8 justify-center md:mt-20'>
 				<h2 class='text-heading-l text-gunmetal'>
@@ -185,21 +163,5 @@ import decorationRight from '../assets/images/pattern-curved-line-right.svg';
 		</div>
 	</section>
 
-	<section class='section footer'>
-		<div class='text-center'>
-			Challenge by <a
-				class='text-blue'
-				href='https://www.frontendmentor.io?ref=challenge'
-				target='_blank'
-				rel='noopener'
-				>Frontend Mentor</a
-			>. Coded by <a
-				class='text-blue'
-				href='https://www.frontendmentor.io/profile/samilaug'
-				target='_blank'
-				rel='noopener'
-				>Samila Gunarathna</a
-			>.
-		</div>
-	</section>
+	<Footer />
 </BaseLayout>
